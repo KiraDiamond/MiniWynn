@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+
+- Added the MiniWynn icon to mod lists.
+- Updated the displayed author to Topdiamond2006(KiraDiamond).
+
 ## 1.0.0
 
 - Small player bodies with larger heads.
