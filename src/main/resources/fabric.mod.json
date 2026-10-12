@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "miniwynn",
+  "version": "${version}",
+  "name": "MiniWynn",
+  "description": "Small player bodies with oversized heads.",
+  "authors": ["KiraDiamond"],
+  "license": "MIT",
+  "environment": "client",
+  "mixins": ["miniwynn.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "1.21.11",
+    "java": ">=21"
+  },
+  "contact": { "homepage": "https://github.com/KiraDiamond/MiniWynn", "sources": "https://github.com/KiraDiamond/MiniWynn" },
+  "breaks": { "smallpeople": "*", "smallmod": "*" }
+}

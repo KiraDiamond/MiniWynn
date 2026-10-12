@@ -1,0 +1,32 @@
+plugins {
+    id 'fabric-loom' version '1.15.5'
+}
+version = '1.0.0'
+group = 'dev.kiradiamond.miniwynn'
+base { archivesName = 'miniwynn' }
+repositories { mavenCentral() }
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21.11'
+    mappings loom.officialMojangMappings()
+    modImplementation 'net.fabricmc:fabric-loader:0.18.4'
+}
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    withSourcesJar()
+}
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand version: project.version }
+}
+jar { from('LICENSE') { rename { 'LICENSE_MiniWynn' } } }
+tasks.register('regressionTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.kiradiamond.miniwynn.EmoteMathTest'
+    enableAssertions = true
+}
+check.dependsOn regressionTest
+
+// Regression checks use a standalone assertion runner.
+test { dependsOn regressionTest; failOnNoDiscoveredTests = false }

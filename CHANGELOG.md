@@ -1,0 +1,12 @@
+# Changelog
+
+## 1.0.0
+
+- Small player bodies with larger heads.
+- Skins, armour, held items, labels, and shadows follow the smaller model.
+- Support for Wynncraft's multipart emotes and animated hats.
+- A separate `miniwynn` mod ID that prevents loading alongside earlier standalone builds.
+- Automatic rendering, with no extra controls or capture tools.
+
+Standard player rendering is shown in the README screenshots. More in-game
+checks are still needed for emotes, hats, crouching, class previews, and mounts.
