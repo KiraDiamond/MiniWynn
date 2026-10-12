@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2
+
+- Fixed inventory previews using a full-sized body with an enlarged head.
+- Corrected preview centering and removed overlapping name labels and mount offsets.
+
 ## 1.0.1
 
 - Added the MiniWynn icon to mod lists.

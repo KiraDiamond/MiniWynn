@@ -5,6 +5,7 @@ import org.joml.Vector3f;
 
 public final class EmoteMathTest {
     public static void main(String[] args) {
+        InventoryPreviewTest.run();
         protocolSurvivesScaling();
         hatFollowsRotatedHead();
         feetRemainAnchored();

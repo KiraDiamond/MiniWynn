@@ -11,7 +11,7 @@ clean-room certification.
 - [Fabric Yarn's player renderer documentation](https://maven.fabricmc.net/docs/yarn-1.21.11+build.4/net/minecraft/client/render/entity/PlayerEntityRenderer.html), used to locate the relevant renderer.
 - Official Minecraft 1.21.11 dependencies and Mojang mappings, inspected with
   Java 21's `javap`. This covered renderer signatures, model resets, equipment,
-  labels, shadows, and display interpolation.
+  labels, shadows, display interpolation, and inventory preview normalization.
 - A Wynncraft 2.2 resource pack downloaded by Minecraft. Its manifest identifies
   Minecraft 1.21.11 and is dated March 10, 2026. The item selectors, display
   transforms, and shader protocol were inspected for compatibility. Pack source
@@ -39,7 +39,8 @@ the avatar renderer.
 
 The build compiles and remaps the mod. Synthetic checks cover the observed
 limb, skin, and fade combinations, foot anchoring, rotated hats, and invalid
-positions.
+positions. Inventory checks use Minecraft's actual render-state classes and cover
+player scale, preview bounds, name labels, mount offsets, and non-player previews.
 
 The README includes user-provided screenshots of standard player rendering.
 Further in-game checks of emotes, animated hats, crouching, mounts, armour,
