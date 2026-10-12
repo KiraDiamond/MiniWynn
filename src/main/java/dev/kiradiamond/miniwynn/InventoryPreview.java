@@ -2,6 +2,8 @@ package dev.kiradiamond.miniwynn;
 
 import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
+import org.joml.Vector3f;
 
 public final class InventoryPreview {
     private InventoryPreview() {}
@@ -17,6 +19,12 @@ public final class InventoryPreview {
             state.nameTag = null;
             state.nameTagAttachment = null;
             state.passengerOffset = null;
+        }
+    }
+
+    public static void alignFeet(EntityRenderState state, float previewScale, Vector3f translation, int top, int bottom) {
+        if (state instanceof AvatarRenderState && previewScale > 0) {
+            translation.y = ((bottom - top) / 2f - 2) / previewScale;
         }
     }
 }

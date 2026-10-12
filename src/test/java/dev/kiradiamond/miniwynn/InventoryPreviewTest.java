@@ -30,6 +30,8 @@ final class InventoryPreviewTest {
             }
         }
 
+        feetStayAtBottom();
+
         LivingEntityRenderState mob = new LivingEntityRenderState();
         mob.scale = 2;
         mob.boundingBoxWidth = 0.6f;
@@ -42,6 +44,27 @@ final class InventoryPreviewTest {
         close(mob.boundingBoxHeight, 1.8f);
         assert mob.nameTag != null;
         assert mob.passengerOffset != null;
+    }
+
+
+    private static void feetStayAtBottom() {
+        AvatarRenderState player = new AvatarRenderState();
+        for (int top : new int[]{0, 35, 120}) {
+            for (int height : new int[]{70, 110}) {
+                for (float scale : new float[]{30, 45, 60}) {
+                    org.joml.Vector3f translation = new org.joml.Vector3f(0.2f, 0.55f, -0.3f);
+                    InventoryPreview.alignFeet(player, scale, translation, top, top + height);
+                    float feetY = top + height / 2f + translation.y * scale;
+                    close(feetY, top + height - 2);
+                    close(translation.x, 0.2f);
+                    close(translation.z, -0.3f);
+                }
+            }
+        }
+        LivingEntityRenderState mob = new LivingEntityRenderState();
+        org.joml.Vector3f translation = new org.joml.Vector3f(0.2f, 0.55f, -0.3f);
+        InventoryPreview.alignFeet(mob, 30, translation, 0, 70);
+        close(translation.y, 0.55f);
     }
 
     private static void close(float actual, float expected) {

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+
+- Anchored the small player's feet near the bottom of inventory previews.
+
 ## 1.0.2
 
 - Fixed inventory previews using a full-sized body with an enlarged head.
