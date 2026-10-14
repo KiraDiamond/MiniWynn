@@ -17,7 +17,7 @@ public final class EmoteDisplays {
         if (state.renderState == null || !(display instanceof Display.ItemDisplay)) return;
         Entity root = display.getRootVehicle();
         if (!(root instanceof Display.ItemDisplay) || root.getPassengers().size() < 6
-                || root.getPassengers().size() > 12) return;
+                || root.getPassengers().size() > 64) return;
         int limbs = 0;
         int partCount = 0;
         Display.ItemDisplay head = null;
@@ -34,6 +34,9 @@ public final class EmoteDisplays {
         Display.RenderState original = state.renderState;
         Display.ItemDisplay.ItemRenderState item = ((Display.ItemDisplay) display).itemRenderState();
         int ownLimb = playerLimb((Display.ItemDisplay) display, partialTick);
+        // Crate animations share a carrier with unrelated scene models.
+        if (ownLimb < 0 && (item == null || item.itemStack().isEmpty()
+                || item.itemTransform() == ItemDisplayContext.GUI && item.itemStack().is(Items.OAK_BOAT))) return;
         boolean hat = ownLimb < 0 && item != null && item.itemTransform() == ItemDisplayContext.HEAD;
         Matrix4f headPose = EmoteMath.decode(head.renderState().transformation()
                 .get(head.calculateInterpolationProgress(partialTick)).getMatrix());

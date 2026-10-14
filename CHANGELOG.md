@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+- Fixed animated heads shifting sideways during emotes and crate-opening animations. Enlarged heads and hats now stay aligned with the neck as it turns.
+- Kept player models small in crate animations that share a carrier with extra scene props, while leaving the crate and its contents unchanged.
+
 ## 1.0.3
 
 - Anchored the small player's feet near the bottom of inventory previews.

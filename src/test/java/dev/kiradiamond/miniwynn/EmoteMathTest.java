@@ -7,6 +7,8 @@ public final class EmoteMathTest {
     public static void main(String[] args) {
         InventoryPreviewTest.run();
         protocolSurvivesScaling();
+        animatedHeadKeepsItsNeck();
+        try { EmoteDisplaysTest.run(); } catch (Exception error) { throw new AssertionError(error); }
         hatFollowsRotatedHead();
         feetRemainAnchored();
         unrelatedPositionsAreRejected();
@@ -28,6 +30,22 @@ public final class EmoteMathTest {
                 }
             }
         }
+    }
+
+    private static void animatedHeadKeepsItsNeck() {
+        try (var input = EmoteMathTest.class.getResourceAsStream("/animated-head-poses.json")) {
+            var poses = new com.google.gson.Gson().fromJson(new java.io.InputStreamReader(input,
+                    java.nio.charset.StandardCharsets.UTF_8),float[][].class);
+            for (var pose : poses) {
+                var encoded = new Matrix4f().set(pose);
+                var physical = EmoteMath.decode(encoded);
+                var before = physical.transformPosition(new Vector3f(1f/64,0,1f/64));
+                var expected = before.mul(EmoteMath.BODY).add(0,-(1-EmoteMath.BODY),0);
+                var after = EmoteMath.decode(EmoteMath.shrink(encoded,true,physical))
+                        .transformPosition(new Vector3f(1f/64,0,1f/64));
+                assert after.distance(expected)<0.001f : "Animated head moved away from its neck: "+after+" != "+expected;
+            }
+        } catch (java.io.IOException error) { throw new AssertionError(error); }
     }
 
     private static void hatFollowsRotatedHead() {

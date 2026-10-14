@@ -29,10 +29,15 @@ That lets skin layers and head equipment follow the same pose.
 Emotes are recognized as six encoded player-head displays attached to a common
 root. Their 512-unit metadata bands are kept separate from the spatial transform.
 The head and its hat receive the same additional transform around the head's
-interpolated position.
+interpolated neck pivot. The skull item has a local offset of 1/64 block on
+X and Z after Minecraft's item and skull transforms; that offset rotates with
+the head. Enlarging around the display translation instead caused a small
+sideways displacement.
 
-Recognition is limited to roots with 6–12 direct passengers and exactly six
-distinct encoded limbs. Player-shaped NPCs can also shrink because they share
+Recognition is limited to roots with 6–64 direct passengers and exactly six
+distinct encoded limbs. Unrelated crate scene models are left unchanged. A
+regression fixture covers 21 recorded crate poses and 42 head transforms with
+player identity, skin data and world positions removed. Player-shaped NPCs can also shrink because they share
 the avatar renderer.
 
 ## Checks

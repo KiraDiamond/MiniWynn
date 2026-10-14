@@ -29,7 +29,9 @@ public final class EmoteMath {
         Matrix4f physical = decode(source);
         Matrix4f adjustment = new Matrix4f().translation(0, FOOT_Y * (1 - BODY), 0).scale(BODY);
         if (head || decodedHead != null) {
-            Vector3f pivot = (decodedHead == null ? physical : decodedHead).getTranslation(new Vector3f());
+            // The skull item's neck is offset from its display origin.
+            Vector3f pivot = (decodedHead == null ? physical : decodedHead)
+                    .transformPosition(1f / 64, 0, 1f / 64, new Vector3f());
             adjustment.translate(pivot).scale(HEAD).translate(pivot.negate());
         }
         Matrix4f result = adjustment.mul(physical);

@@ -39,7 +39,7 @@ visible on the client with MiniWynn installed.
 | Fabric Loader | 0.18.4 or newer |
 | Java | 21 |
 
-1. Download **miniwynn-1.0.3.jar** from [Releases](https://github.com/KiraDiamond/MiniWynn/releases/latest).
+1. Download **miniwynn-1.0.4.jar** from [Releases](https://github.com/KiraDiamond/MiniWynn/releases/latest).
 2. Put it in your Fabric instance's `mods` folder.
 3. Restart Minecraft.
 
@@ -73,7 +73,7 @@ Linux / macOS:
 ./gradlew build
 ```
 
-The finished mod is `build/libs/miniwynn-1.0.3.jar`. The build also runs the
+The finished mod is `build/libs/miniwynn-1.0.4.jar`. The build also runs the
 regression checks. To run them separately, use `./gradlew regressionTest`
 or `.\gradlew.bat regressionTest`.
 
