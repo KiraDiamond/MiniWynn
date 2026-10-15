@@ -60,3 +60,13 @@ recordings. The Gradle wrapper checksum comes from
 The README images were supplied by KiraDiamond and cropped without resizing,
 retouching, or generated scene details. Before and after shots use equal-sized
 crop areas, although their original camera positions differ slightly.
+
+## Villagers and labels
+
+Villagers and wandering traders use the same body and head scale as player models.
+Only their render state and model parts change; entity positions and hitboxes stay on the server.
+Vanilla name attachments scale with the model. Text displays and empty invisible
+name-bearing armour stands follow their explicit passenger chain to a small avatar
+or villager. Their render height is lowered by the lost body height, with room for
+the enlarged head. Text size, line spacing and horizontal placement are preserved.
+Unattached text and labels on other entity types are left alone.

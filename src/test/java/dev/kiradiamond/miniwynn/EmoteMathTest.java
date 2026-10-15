@@ -8,7 +8,7 @@ public final class EmoteMathTest {
         InventoryPreviewTest.run();
         protocolSurvivesScaling();
         animatedHeadKeepsItsNeck();
-        try { EmoteDisplaysTest.run(); } catch (Exception error) { throw new AssertionError(error); }
+        try { EmoteDisplaysTest.run(); SmallMobVisualsTest.run(); } catch (Exception error) { throw new AssertionError(error); }
         hatFollowsRotatedHead();
         feetRemainAnchored();
         unrelatedPositionsAreRejected();

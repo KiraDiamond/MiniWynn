@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5
+
+- Added small villagers and wandering traders with enlarged heads.
+- Lowered name tags attached to small NPCs, while keeping their text size and line spacing.
+
 ## 1.0.4
 
 - Fixed animated heads shifting sideways during emotes and crate-opening animations. Enlarged heads and hats now stay aligned with the neck as it turns.

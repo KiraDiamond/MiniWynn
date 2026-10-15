@@ -1,7 +1,7 @@
 plugins {
     id 'fabric-loom' version '1.15.5'
 }
-version = '1.0.4'
+version = '1.0.5'
 group = 'dev.kiradiamond.miniwynn'
 base { archivesName = 'miniwynn' }
 repositories { mavenCentral() }

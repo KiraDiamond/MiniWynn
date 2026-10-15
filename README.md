@@ -4,7 +4,7 @@ Small bodies. Bigger heads. A little more character in Wynncraft.
 
 ![A small character wearing a witch hat in Wynncraft's forest](docs/images/hero.png)
 
-MiniWynn makes players smaller on your screen, with bigger heads and the same skins
+MiniWynn makes players and villagers smaller on your screen, with bigger heads and the same skins
 and gear. It's a client-side Fabric mod for Minecraft 1.21.11, made with Wynncraft
 in mind.
 
@@ -25,6 +25,7 @@ use equal-sized crops with no resizing or retouching.
 
 - Renders player bodies at **55% size**, with heads **1.5 times larger relative to the body**.
 - Scales skins, armour, and held items with the character.
+- Lowers labels attached to small NPCs while keeping the text readable.
 - Supports Wynncraft's emote models, hats, and character previews.
 - Works automatically, with no settings or keybinds.
 
@@ -39,7 +40,7 @@ visible on the client with MiniWynn installed.
 | Fabric Loader | 0.18.4 or newer |
 | Java | 21 |
 
-1. Download **miniwynn-1.0.4.jar** from [Releases](https://github.com/KiraDiamond/MiniWynn/releases/latest).
+1. Download **miniwynn-1.0.5.jar** from [Releases](https://github.com/KiraDiamond/MiniWynn/releases/latest).
 2. Put it in your Fabric instance's `mods` folder.
 3. Restart Minecraft.
 
@@ -73,7 +74,7 @@ Linux / macOS:
 ./gradlew build
 ```
 
-The finished mod is `build/libs/miniwynn-1.0.4.jar`. The build also runs the
+The finished mod is `build/libs/miniwynn-1.0.5.jar`. The build also runs the
 regression checks. To run them separately, use `./gradlew regressionTest`
 or `.\gradlew.bat regressionTest`.
 

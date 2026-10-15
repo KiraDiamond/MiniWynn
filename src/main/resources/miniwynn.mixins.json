@@ -2,6 +2,16 @@
   "required": true,
   "package": "dev.kiradiamond.miniwynn.mixin",
   "compatibilityLevel": "JAVA_21",
-  "client": ["AvatarRendererMixin", "HumanoidModelMixin", "DisplayRendererMixin", "InventoryScreenMixin"],
-  "injectors": { "defaultRequire": 1 }
+  "client": [
+    "AvatarRendererMixin",
+    "HumanoidModelMixin",
+    "DisplayRendererMixin",
+    "InventoryScreenMixin",
+    "VillagerRendererMixin",
+    "VillagerModelMixin",
+    "AttachedLabelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
